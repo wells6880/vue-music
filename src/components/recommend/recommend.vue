@@ -12,14 +12,14 @@
           </v-slider>
         </div>
         <div class="recommend-list">
-          <h3 class="list-title">热门歌单推荐</h3>
+          <h1 class="list-title">热门歌单推荐</h1>
           <ul class="list-content">
             <li class="item" v-for="item in discList">
               <div class="icon">
-                <img v-lazy="item.imgurl" alt="icon">
+                <img v-lazy="item.imgurl">
               </div>
               <div class="text">
-                <h4 class="disc">{{item.dissname}}</h4>
+                <h2 class="disc">{{item.dissname}}</h2>
                 <div class="creator-name">{{item.creator.name}}</div>
               </div>
             </li>
@@ -92,8 +92,6 @@ export default {
   top: 88px
   bottom: 0
   .scroll
-    height: 100%
-    overflow: hidden
     .recommend-list
       .list-title
         text-align: center

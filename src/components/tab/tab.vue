@@ -30,9 +30,10 @@ export default {}
   .tab-item
     flex: 1
     display: inline-block
+    font-size: $font-size-medium
     &.router-link-active
       .tab-item-text
-        padding-bottom: 5px
+        padding: 0 5px 5px
         color: $color-theme
         border-bottom: 2px solid $color-theme
 </style>
