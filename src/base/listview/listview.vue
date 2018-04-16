@@ -5,7 +5,7 @@
       <li class="list-group" v-for="group in data" ref="listGroup">
         <h2 class="list-group-title">{{group.title}}</h2>
         <ul>
-          <li class="list-group-item" v-for="item in group.items">
+          <li class="list-group-item" v-for="item in group.items" @click="select(item)">
             <img class="singer-img" v-lazy="item.avatar">
             <p class="singer-name">{{item.name}}</p>
           </li>
@@ -110,6 +110,9 @@
           height += item.clientHeight
           this.listHeight.push(height)
         }
+      },
+      select(item) {
+        this.$emit('select',item)
       }
     },
     watch: {

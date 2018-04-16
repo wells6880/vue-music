@@ -1,7 +1,7 @@
 <template>
-  <div class="singer" @click="selectSinger">
-    <v-listview :data="singers"></v-listview>
-    <!--<v-singer-detail v-if=""></v-singer-detail>-->
+  <div class="singer">
+    <v-listview :data="singers" @select="selectSinger"></v-listview>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -10,8 +10,8 @@
   import {ERR_OK} from "../../api/config"
   import singer from '../../common/js/singer'
   import vListview from '../../base/listview/listview'
-  import {mapMutations} from 'vuex'
   import vSingerDetail from '../singer-detail/singer-detail'
+  import {mapMutations} from 'vuex'
 
   const HOT_NAME = '热门'
   const HOT_SINGERS_LENGTH = 10
@@ -82,8 +82,11 @@
         })
         return hot.concat(rest)
       },
-      selectSinger() {
-        this.setSinger('zhou')
+      selectSinger(singer) {
+        this.$router.push({
+          path: `/singer/${singer.id}`
+        })
+        this.setSinger(singer)
       },
       ...mapMutations({
         setSinger: 'SET_SINGER'
