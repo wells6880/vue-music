@@ -8,7 +8,7 @@
 <script type="text/ecmascript-6">
   import {getSingerList} from '../../api/singer'
   import {ERR_OK} from "../../api/config"
-  import singer from '../../common/js/singer'
+  import Singer from '../../common/js/singer'
   import vListview from '../../base/listview/listview'
   import vSingerDetail from '../singer-detail/singer-detail'
   import {mapMutations} from 'vuex'
@@ -48,7 +48,7 @@
         list.forEach((item, index) => {
           //hot分类
           if (index < HOT_SINGERS_LENGTH) {
-            map.hot.items.push(new singer({
+            map.hot.items.push(new Singer({
               id: item.Fsinger_mid,
               name: item.Fsinger_name
             }))
@@ -61,7 +61,7 @@
               items: []
             }
           }
-          map[key].items.push(new singer({
+          map[key].items.push(new Singer({
             id: item.Fsinger_mid,
             name: item.Fsinger_name
           }))
@@ -97,7 +97,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .singer
-    position: absolute
+    position: fixed
     top: 88px
     bottom: 0
     width: 100%

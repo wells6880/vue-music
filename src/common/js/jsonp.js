@@ -14,7 +14,7 @@ export default function jsonp(url, params, opts) {
   })
 }
 
-export function param(params) {
+function param(params) {
   let url = ''
   for(var k in params) {
     let val = params[k] !== undefined ? params[k] : ''
