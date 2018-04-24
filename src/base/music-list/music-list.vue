@@ -9,7 +9,7 @@
       <v-song-list :songs="songs"></v-song-list>
     </v-scroll>
   </div>
-6</template>
+</template>
 
 <script>
   import vScroll from '../../base/scroll/scroll'
